@@ -17,7 +17,7 @@ export default function Header() {
         <Link href="/">
           <h2 className="text-2xl">
             <span className="bg-amber-500 py-1 px-2 rounded-lg r-1">IMDB</span>
-            <span className="text-xl hidden sm:inline">Clone</span>
+            <span className="text-xl hidden sm:inline">2.0</span>
           </h2>
         </Link>
       </div>
