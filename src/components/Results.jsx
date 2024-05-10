@@ -1,14 +1,16 @@
 "use client";
-
 import Image from "next/image";
+import Card from "./Card";
 
 export default function Results({ results }) {
   return (
-    <div className="text-red-700">
+    <div
+      className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 
+        max-w-6xl mx-auto py-4"
+    >
       {results.map((result) => (
-        <div key={result.id} className="flex flex-col items-center my-4">
-          <h2 className="text-xl font-semibold">{result.title}</h2>
-          <p className="text-sm text-center">{result.overview}</p>
+        <div key={result.id}>
+          <Card result={result} />
         </div>
       ))}
     </div>
