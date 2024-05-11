@@ -22,7 +22,7 @@ export default function Card({ result }) {
           alt="image is not available"
         ></Image>
         <div className="p-2">
-          <p className="line-clamp-3 text-md text-left">{result.overview}</p>
+          <p className="line-clamp-4 text-sm text-left">{result.overview}</p>
           <h2 className="truncate text-lg font-bold">
             {result.title || result.name}
           </h2>
