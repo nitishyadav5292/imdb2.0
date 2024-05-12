@@ -32,14 +32,12 @@ export default async function MoviePage({ params }) {
           <h2 className="text-lg mb-3 font-bold">
             {movie.title || movie.name}
           </h2>
-          <p className="text-lg mb-3">
-            {movie.tagline ? (
-              <p>
-                <span className="font-semibold">Tagline: </span>
-                {movie.tagline}
-              </p>
-            ) : null}
-          </p>
+          {movie.tagline ? (
+            <p className="text-lg mb-3">
+              <span className="font-semibold">Tagline: </span>
+              {movie.tagline}
+            </p>
+          ) : null}
           <p className="text-lg mb-3">
             <span className="font-semibold mr-1">Overview: </span>
             {movie.overview}
@@ -54,13 +52,15 @@ export default async function MoviePage({ params }) {
           </p>
           <p className=" flex mb-3">
             <span className="font-semibold mr-1">Genre:</span>
-            {movie.genres.map((g) => (
-              <span className="mr-2" key={g.id}>
-                {g.name}
-              </span>
-            ))}
+            {movie.genres.length
+              ? movie.genres.map((g) => (
+                  <span className="mr-2" key={g.id}>
+                    {g.name}
+                  </span>
+                ))
+              : "NA"}
           </p>
-          <p className="flex mb-3">
+          <div className="flex mb-3">
             <p className="">
               <span className="font-semibold">Budget: </span>
               {movie.budget ? `$${movie.budget.toLocaleString()}` : "N/A"}
@@ -69,7 +69,7 @@ export default async function MoviePage({ params }) {
               <span className="font-semibold">Revenue: </span>
               {movie.revenues ? `$${movie.revenues.toLocaleString()}` : "N/A"}
             </p>
-          </p>
+          </div>
         </div>
       </div>
     </div>
